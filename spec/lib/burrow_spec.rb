@@ -108,7 +108,7 @@ describe "Burrow::Collector" do
     it "should return the lag" do
       expect( collector ).to receive(:get)
         .with('/staging/consumer/testconsumer/lag')
-        .and_return(result)
+        .and_return({'status' => result})
 
       expect( collector.get_lag('staging', 'testconsumer') ).to eql(result)
     end

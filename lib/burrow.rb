@@ -37,7 +37,7 @@ module Burrow
     end
 
     def get_lag(cluster, consumer)
-      get("/#{cluster}/consumer/#{consumer}/lag")
+      get("/#{cluster}/consumer/#{consumer}/lag")['status']
     end
 
     def get(path)
